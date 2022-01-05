@@ -1,0 +1,18 @@
+{
+    "recommendations": [
+        "aaron-bond.better-comments",
+        "coenraads.bracket-pair-colorizer-2",
+        "vivaxy.vscode-conventional-commits",
+        "oderwat.indent-rainbow",
+        "pkief.material-icon-theme",
+        "zhuangtongfa.material-theme",
+        "esbenp.prettier-vscode",
+        "redwan-hossain.auto-rename-tag-clone",
+        "dsznajder.es7-react-js-snippets",
+        "dbaeumer.vscode-eslint",
+        "kisstkondoros.vscode-gutter-preview",
+        "sndst00m.vscode-native-svg-preview",
+        "bradlc.vscode-tailwindcss",
+        "csstools.postcss"
+    ]
+}

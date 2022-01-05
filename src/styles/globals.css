@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply bg-[#EDF2F7] text-textLight dark:bg-primaryDark dark:text-textDark;
+    }
+}
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0; /* Remove scrollbar space */
+    background: transparent; /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #ff0000;
+}
+
+.navigation-wrapper {
+    position: relative;
+}
+
+.arrow {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    fill: #ebedf2;
+    cursor: pointer;
+}
+
+.arrow--top {
+    left: 5px;
+}
+
+.arrow--bottom {
+    left: auto;
+    right: 5px;
+}
+
+.arrow--disabled {
+    fill: #dde0e6;
+}
