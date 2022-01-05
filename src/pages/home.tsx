@@ -1,7 +1,6 @@
-import dynamic from "next/dynamic";
 import type { NextPage } from "next";
 import Head from "next/head";
-const IndexLayout = dynamic(() => import("../components/layout"));
+import IndexLayout from "../components/layout";
 
 const Home: NextPage = () => {
     return (
@@ -11,7 +10,9 @@ const Home: NextPage = () => {
                 <meta name="description" content="All your investments in one single place" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <IndexLayout>Add here</IndexLayout>
+            <IndexLayout>
+                <div className="w-ful h-full justify-center items-start flex">Hello</div>
+            </IndexLayout>
         </div>
     );
 };

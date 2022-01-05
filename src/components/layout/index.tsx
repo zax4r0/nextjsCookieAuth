@@ -1,5 +1,6 @@
 import { Box, Drawer, DrawerContent, useColorModeValue, useDisclosure } from "@chakra-ui/react";
 import { ReactNode } from "react";
+import Footer from "./Footer";
 
 import { MobileNav } from "./NavItem";
 import SidebarContent from "./Sidebar";
@@ -33,6 +34,7 @@ const Layout = ({ children }: LayoutProps) => {
                 <Box ml={{ base: 0, md: 60 }} p="4">
                     {children}
                 </Box>
+                <Footer />
             </Box>
         </>
     );
