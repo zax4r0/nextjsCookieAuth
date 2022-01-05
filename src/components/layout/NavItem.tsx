@@ -67,7 +67,7 @@ interface MobileProps extends FlexProps {
     onOpen: () => void;
 }
 export const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
-    const Bgvalue = useColorModeValue("primaryDark", "gray.300");
+    const Bgvalue = useColorModeValue("#FFFFFF", "primaryDark");
     const ColorValue = useColorModeValue("primaryDark", "#FFFFFF");
 
     const router = useRouter();
