@@ -13,13 +13,27 @@ import { ChakraProvider } from "@chakra-ui/react";
 import defaultSEOConfig from "../../next-seo.config";
 import { Provider as ReduxProvider } from "react-redux";
 import createEmotionCache from "../styles/createEmotionCache";
-
+import NProgress from "nprogress";
+import "nprogress/nprogress.css";
+import { Router } from "next/router";
 const clientSideEmotionCache = createEmotionCache();
 
 interface MyAppProps extends AppProps {
     emotionCache?: EmotionCache;
 }
+NProgress.configure({ showSpinner: false });
 
+Router.events.on("routeChangeStart", () => {
+    NProgress.start();
+});
+
+Router.events.on("routeChangeComplete", () => {
+    NProgress.done();
+});
+
+Router.events.on("routeChangeError", () => {
+    NProgress.done();
+});
 const MyApp = ({ Component, pageProps, emotionCache = clientSideEmotionCache }: MyAppProps) => {
     const reduxStore = useRedux(pageProps);
 

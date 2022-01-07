@@ -3,8 +3,14 @@ import { extendTheme } from "@chakra-ui/react";
 import Button from "./components/button";
 import fonts from "./fonts";
 
+const config = {
+    initialColorMode: "light",
+    useSystemColorMode: false,
+};
+
 const customTheme = extendTheme({
     fonts,
+    config,
     colors: {
         primaryLight: "#FFFFFF",
         lightAccent: "#00C480",

@@ -20,15 +20,31 @@ function LoginPage() {
 
     const emailRef = useRef<HTMLInputElement>(null);
     const passwordRef = useRef<HTMLInputElement>(null);
-
     const [lostMessage, setLostMessage] = useState("");
 
-    const handelSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-        // Preventing the page from reloading
+    async function handelSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
-        // Do something
+
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_ENDPOINT2}/login`, {
+            method: "POST",
+            credentials: "include",
+            headers: {
+                "Content-Type": "application/json",
+                // "Content-Type": "application/x-www-form-urlencoded",
+            },
+            body: JSON.stringify({
+                email: emailRef.current?.value,
+                password: passwordRef.current?.value,
+            }),
+            // body: `email=${emailRef.current?.value}&password=${passwordRef.current?.value}`,
+        });
+        const json = await res.json();
+        console.log(json);
         router.push("/home");
-    };
+    }
+
+    console.log(emailRef.current?.value, passwordRef.current?.value);
+
     const handalForgotpass = () => {
         // Do something
         setLostMessage("You'll get an email with a reset link");
